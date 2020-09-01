@@ -3,26 +3,27 @@ package fiado;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
 
-        int[] fiados = new int[10];
-        // fiados[0] = 12;
-        // fiados[3] = 87;
+    public static void main(String[] args) {
+        Consumidor consumidor = new Consumidor();
+        consumidor.fiados = new int[10];
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("Informe o nome do cliente: ");
-        String nome = scanner.nextLine();
+        consumidor.nome = scanner.nextLine();
         System.out.print("Informe o valor da compra: ");
-        fiados[0] = Integer.valueOf(scanner.nextLine());
+        consumidor.fiados[0] = Integer.valueOf(scanner.nextLine());
 
-        int total = somaFor(fiados);
+        int total = somaForEach(consumidor.fiados);
 
-        System.out.println("Cliente " + nome + " deve: " + total);
+        System.out.println("Cliente " + consumidor.nome + " deve: " + total);
 
         if (total > 100) {
             System.out.println("Ganhou brinde!!!");
         }
     }
+
+
 
     public static int somaWhile(int[] fiados) {
 
