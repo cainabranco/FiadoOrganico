@@ -7,10 +7,14 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Informe o nome do cliente: ");
 
+        System.out.print("Informe o nome do cliente: ");
         String nome = scanner.nextLine();
         Consumidor consumidor = new Consumidor(nome);
+
+        System.out.print("Informe o telefone do cliente: ");
+        String telefone = scanner.nextLine();
+        consumidor.setTelefone(telefone);
 
         System.out.print("Informe o valor da compra: ");
         int fiado = Integer.parseInt(scanner.nextLine());
@@ -20,6 +24,7 @@ public class Main {
 
         System.out.println("Cliente " + consumidor.getNome() + " deve: " + total);
 
+        // Abordagem diferente para exibição de "ganhou brinde"
         if (total > 100) {
             System.out.println("Ganhou brinde!!!");
         }

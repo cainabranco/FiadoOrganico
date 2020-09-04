@@ -5,6 +5,7 @@ public class Consumidor {
     private String nome;
     private int[] fiados;
     private int posicao = 0;
+    private String telefone;
 
     // Construtor
     public Consumidor(String nome) {
@@ -34,5 +35,13 @@ public class Consumidor {
         }
 
         return total;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 }
